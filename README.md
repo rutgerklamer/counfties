@@ -12,4 +12,6 @@ Continue to the site. Explore it on the BSC main net or the BSC test net.
 - **Goal?**  
 Have an blockchain powered world war between wealthiest countries.  
 
-<small>**Disclaimer:** for the best experience, use a desktop!</small></div>
+**Disclaimer:** for the best experience, use a desktop!
+
+![alt text](https://github.com/rutgerklamer/counfties/blob/screenshot.png?raw=true)
