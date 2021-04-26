@@ -14,4 +14,4 @@ Have an blockchain powered world war between wealthiest countries.
 
 **Disclaimer:** for the best experience, use a desktop!
 
-![alt text](./blob/screenshot.png?raw=true)
+![Screenshot of the project](./blob/screenshot.png?raw=true)
