@@ -83,6 +83,8 @@ async function onConnect() {
     }
     $("#buyCountry").removeClass("notAvailable")
     document.getElementById("buyCountry").value = "Add message and buy country";
+    hideAll();
+
 }
 
 async function checkingConnections() {
@@ -102,6 +104,7 @@ async function checkingConnections() {
 
 
 async function connectToContract() {
+    showAll();
     if (networkId === 97) {
         document.getElementById("network").innerHTML = "Test net";
         web3 = new Web3("https://data-seed-prebsc-1-s1.binance.org:8545/");
@@ -139,12 +142,13 @@ async function getData(id, name) {
     document.getElementById("countryMessage").innerHTML = message;
 }
 
-function refreshCountry() {
-    getLeaderboard();
+async function refreshCountry() {
+    await getLeaderboard();
     let id = document.getElementById("countryId").innerHTML;
     let name = document.getElementById("countryName").innerHTML;
     getData(id, name);
     setTimeout(refreshCountry, 5000);
+    hideAll();
 }
 
 async function buyCountry() {
@@ -221,6 +225,7 @@ async function getLeaderboard() {
             highlightCountry(prices[1][1], countryListAlpha3[prices[1][1]]);
         }
     };
+    hideAll();
 }
 
 function moveToCountry(country) {
@@ -261,8 +266,7 @@ async function resetProgram() {
     showAll();
     await onConnect();
     await connectToContract();
-    getLeaderboard();
-    hideAll();
+    await getLeaderboard();
 }
 
 $(document).ready(async function() {
