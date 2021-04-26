@@ -186,7 +186,7 @@ async function getFirstCountry() {
 async function getLeaderboard() {
     let prices = await contract.methods.getTopCountriesPrices().call();
     console.log(prices[4][0]);
-    document.getElementById("firstPlace").innerHTML = web3.utils.fromWei(prices[4][0], "ether") + " - " + prices[4][1] + " - " + countryListAlpha3[prices[4][1]];
+    document.getElementById("firstPlace").innerHTML = web3.utils.fromWei(prices[4][0], "ether") + " - " + prices[4][1] + " - " + (countryListAlpha3[prices[4][1]] == null ? "" : countryListAlpha3[prices[4][1]]);
     document.getElementById("firstPlace").onclick = function() {
         if (prices[4][1] != "N/A") {
             $("html, body").animate({
@@ -195,7 +195,7 @@ async function getLeaderboard() {
             highlightCountry(prices[4][1], countryListAlpha3[prices[4][1]]);
         }
     };
-    document.getElementById("secondPlace").innerHTML = web3.utils.fromWei(prices[3][0], "ether") + " - " + prices[3][1] + " - " + countryListAlpha3[prices[3][1]];
+    document.getElementById("secondPlace").innerHTML = web3.utils.fromWei(prices[3][0], "ether") + " - " + prices[3][1] + (countryListAlpha3[prices[3][1]] == null ? "" :" - " + countryListAlpha3[prices[3][1]]);
     document.getElementById("secondPlace").onclick = function() {
         if (prices[3][1] != "N/A") {
             $("html, body").animate({
@@ -205,7 +205,7 @@ async function getLeaderboard() {
             highlightCountry(prices[3][1], countryListAlpha3[prices[3][1]]);
         }
     };
-    document.getElementById("thirdPlace").innerHTML = web3.utils.fromWei(prices[2][0], "ether") + " - " + prices[2][1] + " - " + countryListAlpha3[prices[2][1]];
+    document.getElementById("thirdPlace").innerHTML = web3.utils.fromWei(prices[2][0], "ether") + " - " + prices[2][1] + (countryListAlpha3[prices[2][1]] == null ? "" :" - " + countryListAlpha3[prices[2][1]]);
     document.getElementById("thirdPlace").onclick = function() {
         if (prices[2][1] != "N/A") {
             $("html, body").animate({
