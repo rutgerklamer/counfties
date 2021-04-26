@@ -1,6 +1,9 @@
 
 # Cou**nft**ies
 
+- **Video?**
+Here is a [Youtube](https://www.youtube.com/watch?v=h-ZkihZujCY) video. Here is a [Demo](http://counfties.com).
+
 - **What?**  
 This is a Decentralized Application (Dapp). You can own countries and display your message on them. The leaderboard shows the wealthiest countries.  
 
