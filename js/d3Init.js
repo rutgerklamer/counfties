@@ -24,7 +24,8 @@ function dropDownMenuCreator() {
 
     d3.select("#continents")
         .append("p")
-        .text("(Note: To navigate, drag the globe or use the above menu. Click to view.)")
+        .html("<small><b>NOTE:</b> To navigate, drag the globe or use the above menu. Click to view.")
+
 
 
 }
