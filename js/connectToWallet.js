@@ -59,6 +59,7 @@ async function onConnect() {
     init();
     web3wallet = new Web3(window.ethereum);
     networkId = await web3wallet.eth.net.getId();
+    console.log(networkId)
     if (networkId == 97) {
         document.getElementById("network").innerHTML = "Test net";
     } else if (networkId == 56) {
@@ -104,6 +105,19 @@ async function checkingConnections() {
 
 
 async function connectToContract() {
+  if (window.ethereum) {
+    window.ethereum.on("accountsChanged", (accounts) => {
+        resetProgram();
+    });
+
+    window.ethereum.on("chainChanged", (chainId) => {
+        resetProgram();
+    });
+
+    window.ethereum.on("networkChanged", (networkId) => {
+        resetProgram();
+    });
+  }
     showAll();
     if (networkId === 97) {
         document.getElementById("network").innerHTML = "Test net";
@@ -112,8 +126,9 @@ async function connectToContract() {
         hrefBscscan = "https://testnet.bscscan.com"
     } else if (networkId === 56) {
         document.getElementById("network").innerHTML = "Main net";
-        contractAddress = "0x3016F9645Cacf44440E37f24E56DBaB0Aa7033ac";
         web3 = new Web3("https://bsc-dataseed.binance.org/");
+        contractAddress = "0x3016F9645Cacf44440E37f24E56DBaB0Aa7033ac";
+        hrefBscscan = "https://bscscan.com"
     } else {
         alert("Please change your network provider to the Binance Smart Chain (or testnet)");
     }
@@ -153,6 +168,7 @@ async function refreshCountry() {
 
 async function buyCountry() {
     showAll();
+    await onConnect();
     if (document.getElementById("countryId").innerHTML == "") {
         return;
     }
@@ -266,24 +282,13 @@ async function resetProgram() {
     showAll();
     await onConnect();
     await connectToContract();
+    let id = document.getElementById("countryId").innerHTML;
+    let name = document.getElementById("countryName").innerHTML;
+    await getData(id, name);
     await getLeaderboard();
 }
 
 $(document).ready(async function() {
-  if (window.ethereum) {
-    window.ethereum.on("accountsChanged", (accounts) => {
-        resetProgram();
-    });
-
-    window.ethereum.on("chainChanged", (chainId) => {
-        resetProgram();
-    });
-
-    window.ethereum.on("networkChanged", (networkId) => {
-        resetProgram();
-    });
-  }
-
     projection.scale(document.getElementById("worldGlobe").getBoundingClientRect().width / 2).translate([document.getElementById("worldGlobe").getBoundingClientRect().width / 2, document.getElementById("worldGlobe").getBoundingClientRect().width / 2]);
     refresh();
     connectToContract();
