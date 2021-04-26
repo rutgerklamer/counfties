@@ -1,3 +1,4 @@
+
 # Cou**nft**ies
 
 - **What?**  
@@ -15,3 +16,14 @@ Have an blockchain powered world war between wealthiest countries.
 **Disclaimer:** for the best experience, use a desktop!
 
 ![Screenshot of the project](./blob/screenshot.png?raw=true)
+
+- **How to run?**
+Publish the contract code to the Binance Smart Chain main net/test net. Once you've done this you need to copy the contract address to the 'connectToWallet.js' file (Line 111/115). I recommend [Remix](http://remix.ethereum.org/).
+
+	Now you need to run the project on a network. I recmommend using [Node.js](https://nodejs.org/en/) with the [http-server](https://www.npmjs.com/package/http-server) plugin.
+
+- **Used libraries**
+1. [web3.js](https://web3js.readthedocs.io/en/v1.3.4/#)
+2. [d3.js](https://d3js.org/)
+3. [umd.js](https://github.com/umdjs/umd)
+4. [font awesome](https://fontawesome.com/)
