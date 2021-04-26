@@ -270,6 +270,7 @@ async function resetProgram() {
 }
 
 $(document).ready(async function() {
+  if (window.ethereum) {
     window.ethereum.on("accountsChanged", (accounts) => {
         resetProgram();
     });
@@ -281,6 +282,7 @@ $(document).ready(async function() {
     window.ethereum.on("networkChanged", (networkId) => {
         resetProgram();
     });
+  }
 
     projection.scale(document.getElementById("worldGlobe").getBoundingClientRect().width / 2).translate([document.getElementById("worldGlobe").getBoundingClientRect().width / 2, document.getElementById("worldGlobe").getBoundingClientRect().width / 2]);
     refresh();
