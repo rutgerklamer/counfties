@@ -1,0 +1,107 @@
+:root {
+  --background: #ffe9d1;
+  --text: #001440;
+  --goldText: #D4AF37;
+  --silverText: #C4CACE;
+  --bronzeText: #B08D57;
+  --textHighlightColor: #fb4d46;
+  --country: #7da27e ;
+  --countryHover: #608661;
+  --countrySelect: #825d81;
+  --worldLight: #368DC5;
+  --worldDark: #0058AB;
+}
+
+
+html, body {
+  height: 100%;
+}
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Zen Dots', cursive;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 1rem;
+  text-align: center;
+}
+
+a {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin: 0;
+  text-decoration: none;
+  transition: 0.2s;
+  color: var(--text);
+}
+
+a:hover {
+  color: var(--textHighlightColor);
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+h1::after {
+  content: "";
+  background-color: #ffe800;
+  background: repeating-linear-gradient(45deg, #ffe800, #ffe800 0.5rem, #222 0.5rem, #222 1.0rem);
+  display: block;
+  height: 0.5rem;
+  margin-top: 1rem;
+}
+p {
+  margin: 1rem 0 0 0;
+}
+
+b {
+  color: var(--textHighlightColor);
+}
+
+video {
+  position: fixed;
+     top: 50%;
+     left: 50%;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -100;
+     transform: translateX(-50%) translateY(-50%);
+   background-size: cover;
+   transition: 1s opacity;
+}
+
+input[type=submit] {
+  width: 33%;
+  padding: 12px 20px;
+  border: 3px solid white;
+  color: white;
+  box-sizing: border-box;
+  background-color: var(--country);
+}
+
+input[type=submit]:hover {
+  background-color: var(--countrySelect);
+  cursor: pointer;
+}
+input[type=email] {
+  width: 50%;
+  padding: 12px 20px ;
+  border: none;
+  margin: 8px 0;
+  background-color: lightgrey;
+}
+
+iframe {
+  overflow: none;
+}
