@@ -3,6 +3,7 @@
 - **Who uses Counfties?**
 	- [Aaptitude](https://aaptitude.com/)
 	- [Jimbdo](https://friend-dao.jimdosite.com/)
+	- [ChubbyBoy Token](https://chubbytokens.com/)
 
 - **Video?**   
 Here is a [Youtube](https://www.youtube.com/watch?v=h-ZkihZujCY) video. Here is a [Demo](http://counfties.com). 
