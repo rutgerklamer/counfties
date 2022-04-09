@@ -1,6 +1,6 @@
 # Cou**nft**ies
 
-**Who uses Counfties?**
+- **Who uses Counfties?**
 	- [Aaptitude](https://aaptitude.com/)
 	- [Jimbdo](https://friend-dao.jimdosite.com/)
 
